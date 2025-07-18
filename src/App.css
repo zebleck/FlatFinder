@@ -1,0 +1,338 @@
+/* Reset body and html margins/padding */
+html, body {
+  margin: 0;
+  padding: 0;
+  min-height: 100vh;
+}
+
+
+.app-container {
+  padding: 1rem;
+  padding-bottom: 0rem;
+  min-height: 100vh;
+  height: 100vh;
+  box-sizing: border-box;
+  display: flex;
+  flex-direction: column;
+}
+
+.app-header {
+  text-align: center;
+  margin-bottom: 2rem;
+}
+
+.tabs {
+  display: flex;
+  gap: 0.5rem;
+  margin-bottom: 2rem;
+  border-bottom: 2px solid var(--muted-border-color);
+}
+
+.tab {
+  background: none;
+  border: none;
+  border-radius: 0.5rem 0.5rem 0 0;
+  padding: 1rem 2rem;
+  font-size: 1rem;
+  font-weight: 500;
+  cursor: pointer;
+  position: relative;
+  transition: all 0.2s ease;
+  margin-bottom: -2px;
+  color: var(--muted-color);
+}
+
+.tab:hover {
+  color: var(--primary);
+  background-color: var(--primary-focus);
+}
+
+.tab.active {
+  color: var(--primary-inverse);
+  background-color: var(--primary);
+  border-bottom: 2px solid var(--primary);
+}
+
+.tab.active:hover {
+  background-color: var(--primary-hover);
+}
+
+.tab-content {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  overflow: hidden;
+}
+
+.add-listing-section {
+  max-width: 800px;
+  margin: 0 auto;
+}
+
+.view-listings-content {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 2rem;
+  flex: 1;
+  overflow: hidden;
+}
+
+.main-content {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 2rem;
+  margin-bottom: 0;
+}
+
+.listings-section {
+  padding: 0 0.5rem;
+  display: flex;
+  flex-direction: column;
+  overflow: hidden;
+}
+
+.listings-scrollbar {
+  flex: 1;
+  height: 0;
+}
+
+/* SimpleBar custom styling */
+.simplebar-scrollbar::before {
+  background-color: var(--primary);
+  opacity: 0.6;
+}
+
+.simplebar-scrollbar:hover::before {
+  background-color: var(--primary);
+  opacity: 1;
+}
+
+.simplebar-track {
+  background-color: var(--muted-border-color);
+}
+
+.map-section {
+  min-height: 400px;
+}
+
+.listing-form {
+  margin-bottom: 2rem;
+}
+
+.listings-grid {
+  display: grid;
+  gap: 1rem;
+  padding: 0.5rem;
+}
+
+.listing-card {
+  border: 2px solid var(--muted-border-color);
+  padding: 0.75rem;
+  border-radius: 0.5rem;
+  cursor: pointer;
+  transition: all 0.2s ease;
+  background-color: var(--card-background-color);
+  position: relative;
+}
+
+.listing-card:hover {
+  outline: 2px solid #3b82f6;
+  outline-offset: 2px;
+}
+
+.listing-card.selected {
+  border-color: #3b82f6;
+  background-color: var(--primary-focus);
+  outline: 3px solid #3b82f6;
+  outline-offset: 3px;
+}
+
+.listing-card.selected::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: var(--primary);
+  opacity: 0.05;
+  border-radius: 0.5rem;
+  pointer-events: none;
+}
+
+.listing-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+  margin-bottom: 0.25rem;
+  gap: 1rem;
+}
+
+.listing-title-section {
+  flex: 1;
+  min-width: 0;
+}
+
+.listing-title-section h4 {
+  margin: 0 0 0.25rem 0;
+  font-size: 1.1rem;
+}
+
+.listing-address {
+  margin: 0;
+  color: var(--muted-color);
+}
+
+.listing-right-section {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-end;
+  gap: 0.25rem;
+}
+
+.listing-right-section .rent-info {
+  margin: 0;
+  font-size: 0.95rem;
+  text-align: right;
+}
+
+.listing-actions {
+  display: flex;
+  gap: 0.5rem;
+}
+
+.listing-actions button {
+  padding: 0.25rem 0.5rem;
+  font-size: 0.875rem;
+}
+
+.status-badge {
+  display: inline-block;
+  padding: 0.25rem 0.75rem;
+  border-radius: 1rem;
+  font-size: 0.8rem;
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+  background-color: var(--secondary);
+  color: white;
+  transition: transform 0.2s ease;
+}
+
+.listing-card:hover .status-badge {
+  transform: scale(1.05);
+}
+
+.status-badge.interested {
+  background-color: #3b82f6;
+  box-shadow: 0 2px 4px rgba(59, 130, 246, 0.3);
+}
+
+.status-badge.contacted {
+  background-color: #f59e0b;
+  box-shadow: 0 2px 4px rgba(245, 158, 11, 0.3);
+}
+
+.status-badge.viewing-scheduled {
+  background-color: #10b981;
+  box-shadow: 0 2px 4px rgba(16, 185, 129, 0.3);
+}
+
+.status-badge.rejected {
+  background-color: #ef4444;
+  box-shadow: 0 2px 4px rgba(239, 68, 68, 0.3);
+}
+
+.map-container {
+  height: 650px;
+  width: 100%;
+  border-radius: 0.25rem;
+  overflow: hidden;
+}
+
+/* Remove Leaflet watermark */
+.leaflet-control-attribution {
+  display: none !important;
+}
+
+/* Remove marker shadows */
+.leaflet-marker-shadow {
+  display: none !important;
+}
+
+/* Remove marker icon background */
+.leaflet-marker-icon {
+  background: none !important;
+  border: none !important;
+  box-shadow: none !important;
+}
+
+/* Make popup text darker */
+.leaflet-popup-content {
+  color: #333333 !important;
+  font-weight: 500 !important;
+}
+
+.rent-fields {
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr;
+  gap: 1rem;
+  margin-bottom: 1rem;
+}
+
+.rent-fields-edit {
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr;
+  gap: 0.5rem;
+  margin: 1rem 0;
+}
+
+.rent-info {
+  color: var(--primary);
+  font-size: 1.1rem;
+  margin: 0.25rem 0;
+}
+
+.rent-info small {
+  color: var(--muted-color);
+  font-size: 0.875rem;
+  margin-left: 0.25rem;
+}
+
+.listing-description {
+  display: -webkit-box;
+  -webkit-line-clamp: 4;
+  -webkit-box-orient: vertical;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  line-height: 1.4;
+  max-height: 5.6em;
+  margin: 0.5rem 0;
+}
+
+.listing-description-expanded {
+  margin: 0.25rem 0;
+  line-height: 1.4;
+  white-space: pre-wrap;
+  background-color: var(--card-sectionBackground-color);
+  padding: 0.75rem;
+  border-radius: 0.25rem;
+  border-left: 3px solid var(--primary);
+}
+
+@media (max-width: 768px) {
+  .main-content,
+  .view-listings-content {
+    grid-template-columns: 1fr;
+  }
+  
+  .rent-fields,
+  .rent-fields-edit {
+    grid-template-columns: 1fr;
+  }
+  
+  .tab {
+    padding: 0.75rem 1rem;
+    font-size: 0.9rem;
+  }
+}
